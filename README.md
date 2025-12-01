@@ -38,7 +38,7 @@
 ==========
 | |  |  |
 |---|---|---|
-| ![전체 흐름](<assets/[스텝별 풀이 영상] (결과 값 배속 배전 전체 배속 버전) 20초.gif>) | ![짧은 데모](assets/short.gif)| ![엔딩](<assets/[마지막 엔딩 영상] 13초.gif>)  |
+| ![전체 흐름](<assets/demo_flow.gif>) | ![짧은 데모](assets/short.gif)| ![엔딩](<assets/demo_ending.gif>)  |
 
 시스템 아키텍처
 -------------
