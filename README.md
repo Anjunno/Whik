@@ -38,7 +38,7 @@
 ==========
 | |  |  |
 |---|---|---|
-| ![전체 흐름](<assets/demo_flow.gif>) | ![짧은 데모](assets/short.gif)| ![엔딩](<assets/demo_ending.gif>)  |
+| ![전체 흐름](<assets/demo_flow.gif>) | ![짧은 데모](assets/demo_short.gif)| ![엔딩](<assets/demo_ending.gif>)  |
 
 시스템 아키텍처
 -------------
