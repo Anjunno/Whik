@@ -1,0 +1,58 @@
+[
+  {
+    "schedule_name": "linkbig-ht-01-lambda-squirrel-PushNotification-SAT-SUN",
+    "schedule_arn": "arn:aws:scheduler:us-east-1:<AWS_ACCOUNT_ID>:schedule/default/linkbig-ht-01-lambda-squirrel-PushNotification-SAT-SUN",
+    "status": "ENABLED",
+    "timezone": "Asia/Seoul",
+    "schedule_expression": "cron(0 8,14,19,23 ? * SAT-SUN *)",
+    "targets": [
+      {
+        "target_arn": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-lambda-squirrel-pushNotification",
+        "execution_role_name": "SafeRoleForUser-linkbig-ht-01", 
+        "input_json": "N/A"
+      }
+    ]
+  },
+  {
+    "schedule_name": "linkbig-ht-01-lambda-squirrel-PushNotification-MON-FRI",
+    "schedule_arn": "arn:aws:scheduler:us-east-1:<AWS_ACCOUNT_ID>:schedule/default/linkbig-ht-01-lambda-squirrel-PushNotification-MON-FRI",
+    "status": "ENABLED",
+    "timezone": "Asia/Seoul",
+    "schedule_expression": "cron(0 8,22 ? * MON-FRI *)",
+    "targets": [
+      {
+        "target_arn": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-lambda-squirrel-pushNotification",
+        "execution_role_name": "SafeRoleForUser-linkbig-ht-01",
+        "input_json": "N/A"
+      }
+    ]
+  },
+  {
+    "schedule_name": "linkbig-ht-01-lambda-squirrel-PushNotification-MON-FRI2",
+    "schedule_arn": "arn:aws:scheduler:us-east-1:<AWS_ACCOUNT_ID>:schedule/default/linkbig-ht-01-lambda-squirrel-PushNotification-MON-FRI2",
+    "status": "ENABLED",
+    "timezone": "Asia/Seoul",
+    "schedule_expression": "cron(30 12,18,19 ? * MON-FRI *)",
+    "targets": [
+      {
+        "target_arn": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-lambda-squirrel-pushNotification",
+        "execution_role_name": "SafeRoleForUser-linkbig-ht-01",
+        "input_json": "N/A"
+      }
+    ]
+  },
+  {
+    "schedule_name": "linkbig-ht-01-lambda-squirrel-PushNotification-SAT-SUN2",
+    "schedule_arn": "arn:aws:scheduler:us-east-1:<AWS_ACCOUNT_ID>:schedule/default/linkbig-ht-01-lambda-squirrel-PushNotification-SAT-SUN2",
+    "status": "ENABLED",
+    "timezone": "Asia/Seoul",
+    "schedule_expression": "cron(30 12 ? * SAT-SUN *)",
+    "targets": [
+      {
+        "target_arn": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-lambda-squirrel-pushNotification",
+        "execution_role_name": "SafeRoleForUser-linkbig-ht-01",
+        "input_json": "N/A"
+      }
+    ]
+  }
+]

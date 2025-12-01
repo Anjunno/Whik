@@ -1,0 +1,165 @@
+[
+    {
+        "Architecture": "x86_64",
+        "BlockDeviceMappings": [
+            {
+                "DeviceName": "/dev/sda1",
+                    "Ebs": {
+                    "AttachTime": "2025-10-02T05:59:27+00:00",
+                    "DeleteOnTermination": true,
+                    "Status": "attached",
+                    "VolumeId": "<VOLUME_ID>"
+                }
+            }
+        ],
+        "ClientToken": "e2d464f3-94a9-4dd9-84d5-bfe6bbcef0b3",
+        "EbsOptimized": true,
+        "EnaSupport": true,
+        "Hypervisor": "xen",
+        "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::<AWS_ACCOUNT_ID>:instance-profile/SafeInstanceProfileForUser-linkbig-ht-01",
+            "Id": "<IAM_PROFILE_ID>"
+        },
+        "NetworkInterfaces": [
+            {
+                "Association": {
+                    "IpOwnerId": "amazon",
+                    "PublicDnsName": "<PUBLIC_DNS_NAME>",
+                    "PublicIp": "<PUBLIC_IP_ADDRESS>"
+                },
+                "Attachment": {
+                    "AttachTime": "2025-10-02T05:59:26+00:00",
+                    "AttachmentId": "<ATTACHMENT_ID>",
+                    "DeleteOnTermination": true,
+                    "DeviceIndex": 0,
+                    "Status": "attached",
+                    "NetworkCardIndex": 0
+                },
+                "Description": "",
+                "Groups": [
+                    {
+                        "GroupId": "<SECURITY_GROUP_ID>",
+                        "GroupName": "launch-wizard-16"
+                    }
+                ],
+                "Ipv6Addresses": [],
+                "MacAddress": "<MAC_ADDRESS>",
+                "NetworkInterfaceId": "<ENI_ID>",
+                "OwnerId": "<AWS_ACCOUNT_ID>",
+                "PrivateDnsName": "<PRIVATE_DNS_NAME>",
+                "PrivateIpAddress": "<PRIVATE_IP_ADDRESS>",
+                "PrivateIpAddresses": [
+                    {
+                        "Association": {
+                            "IpOwnerId": "amazon",
+                            "PublicDnsName": "<PUBLIC_DNS_NAME>",
+                            "PublicIp": "<PUBLIC_IP_ADDRESS>"
+                        },
+                        "Primary": true,
+                        "PrivateDnsName": "<PRIVATE_DNS_NAME>",
+                        "PrivateIpAddress": "<PRIVATE_IP_ADDRESS>"
+                    }
+                ],
+                "SourceDestCheck": true,
+                "Status": "in-use",
+                "SubnetId": "<SUBNET_ID>",
+                "VpcId": "<VPC_ID>",
+                "InterfaceType": "interface",
+                "Operator": {
+                    "Managed": false
+                }
+            }
+        ],
+        "RootDeviceName": "/dev/sda1",
+        "RootDeviceType": "ebs",
+        "SecurityGroups": [
+            {
+                "GroupId": "<SECURITY_GROUP_ID>",
+                "GroupName": "launch-wizard-16"
+            }
+        ],
+        "SourceDestCheck": true,
+        "Tags": [
+            {
+                "Key": "Name",
+                "Value": "linkbig-ht-01-lambda-squirrel-ec2"
+            },
+            {
+                "Key": "group",
+                "Value": "linkbig-ht"
+            },
+            {
+                "Key": "username",
+                "Value": "linkbig-ht-01"
+            }
+        ],
+        "VirtualizationType": "hvm",
+        "CpuOptions": {
+            "CoreCount": 1,
+            "ThreadsPerCore": 2
+        },
+        "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+        },
+        "HibernationOptions": {
+            "Configured": false
+        },
+        "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+        },
+        "EnclaveOptions": {
+            "Enabled": false
+        },
+        "BootMode": "uefi-preferred",
+        "PlatformDetails": "Linux/UNIX",
+        "UsageOperation": "RunInstances",
+        "UsageOperationUpdateTime": "2025-10-02T05:59:26+00:00",
+        "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": true,
+            "EnableResourceNameDnsAAAARecord": false
+        },
+        "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+        },
+        "CurrentInstanceBootMode": "uefi",
+        "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+        },
+        "Operator": {
+            "Managed": false
+        },
+        "InstanceId": "<INSTANCE_ID>",
+        "ImageId": "<AMI_ID>",
+        "State": {
+            "Code": 16,
+            "Name": "running"
+        },
+        "PrivateDnsName": "<PRIVATE_DNS_NAME>",
+        "PublicDnsName": "<PUBLIC_DNS_NAME>",
+        "StateTransitionReason": "",
+        "AmiLaunchIndex": 0,
+        "ProductCodes": [],
+        "InstanceType": "t3.medium",
+        "LaunchTime": "2025-10-02T05:59:26+00:00",
+        "Placement": {
+            "AvailabilityZoneId": "use1-az4",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-1d"
+        },
+        "Monitoring": {
+            "State": "disabled"
+        },
+        "SubnetId": "<SUBNET_ID>",
+        "VpcId": "<VPC_ID>",
+        "PrivateIpAddress": "<PRIVATE_IP_ADDRESS>",
+        "PublicIpAddress": "<PUBLIC_IP_ADDRESS>"
+    }
+]

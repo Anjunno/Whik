@@ -1,0 +1,3 @@
+{
+    "Policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"AllowBedrockRoleToPutObjects\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::<AWS_ACCOUNT_ID>:role/SafeRoleForUser-linkbig-ht-01\"},\"Action\":\"s3:PutObject\",\"Resource\":\"arn:aws:s3:::<S3_BUCKET_NAME>/*\"},{\"Sid\":\"AllowCloudFrontServicePrincipal\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"cloudfront.amazonaws.com\"},\"Action\":\"s3:GetObject\",\"Resource\":\"arn:aws:s3:::<S3_BUCKET_NAME>/*\",\"Condition\":{\"ArnLike\":{\"AWS:SourceArn\":\"arn:aws:cloudfront::<AWS_ACCOUNT_ID>:distribution/<CLOUDFRONT_DISTRIBUTION_ID>\"}}}]}"
+}

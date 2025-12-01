@@ -1,0 +1,126 @@
+[
+  {
+    "path": "/contents/upload",
+    "method": "POST",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-process-prompt-Video-upload",
+    "is_proxy": true,
+    "authorizer": "NONE",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+    "path": "/short-form/feed",
+    "method": "GET",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-short-form-get-feed",
+    "is_proxy": true,
+    "authorizer": "RestApi-Authorizer",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+    "path": "/short-form/presigned-url",
+    "method": "POST",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-generate-Upload-s3URL",
+    "is_proxy": true,
+    "authorizer": "RestApi-Authorizer",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+    "path": "/short-form/tasks/{jobId}",
+    "method": "GET",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-short-form-get-learning-task",
+    "is_proxy": true,
+    "authorizer": "RestApi-Authorizer",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+    "path": "/short-form/themes",
+    "method": "GET",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-short-form-getThemes",
+    "is_proxy": true,
+    "authorizer": "RestApi-Authorizer",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+    "path": "/short-form/videos/{lang}/{themeId}",
+    "method": "GET",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-short-form-getVideoList",
+    "is_proxy": true,
+    "authorizer": "RestApi-Authorizer",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+    "path": "/signUp",
+    "method": "POST",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-signUp",
+    "is_proxy": true,
+    "authorizer": "NONE",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+    "path": "/startJob",
+    "method": "POST",
+    "lambda_name": "linkbig-ht-01-AIFactory-Check",
+    "is_proxy": true,
+    "authorizer": "NONE",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+    "path": "/word-mode/confirm",
+    "method": "POST",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-confirm",
+    "is_proxy": true,
+    "authorizer": "RestApi-Authorizer",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+  "path": "/word-mode/details/{learnedAtTs}",
+  "method": "GET",
+  "lambda_name": "linkbig-ht-01-lambda-squirrel-details",
+  "is_proxy": true,
+  "authorizer": "RestApi-Authorizer",
+  "mapping_template_vtl": "N/A",
+  "path_parameters": [ 
+      {
+        "name": "learnedAtTs",
+        "mapped_from": "method.request.path.learnedAtTs"
+      }
+    ]
+  },
+  {
+    "path": "/word-mode/history/{targetLanguage}",
+    "method": "GET",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-word-history",
+    "is_proxy": true,
+    "authorizer": "RestApi-Authorizer",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+    "path": "/word-mode/presigned-url/{extension}",
+    "method": "GET",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-generate-presigned-url",
+    "is_proxy": true,
+    "authorizer": "RestApi-Authorizer",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+    "path": "/word-mode/recognition/{scenarioId}",
+    "method": "GET",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-return-recogntion-result",
+    "is_proxy": true,
+    "authorizer": "RestApi-Authorizer",
+    "mapping_template_vtl": "N/A"
+  },
+  {
+    "path": "/word-mode/weekly-history/{targetLanguage}",
+    "method": "GET",
+    "lambda_name": "linkbig-ht-01-lambda-squirrel-getWeeklyLearningHistory",
+    "is_proxy": true,
+    "authorizer": "RestApi-Authorizer",
+    "mapping_template_vtl": "N/A",
+    "path_parameters": [ 
+      {
+        "name": "targetLanguage",
+        "mapped_from": "method.request.path.targetLanguage"
+      }
+    ]
+  }
+]

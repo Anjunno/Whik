@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+  <style>
+    .box { fill:#f7f9fc; stroke:#2b6cb0; stroke-width:2; rx:8; }
+    .title { font: 700 14px/1.2 Arial, Helvetica, sans-serif; fill:#1a365d }
+    .label { font: 12px/1.2 Arial, Helvetica, sans-serif; fill:#1a365d }
+    .arrow { stroke:#94a3b8; stroke-width:2; fill:none; marker-end:url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- Client / CDN -->
+  <rect x="40" y="30" width="160" height="70" class="box" />
+  <text x="120" y="55" text-anchor="middle" class="title">Client</text>
+  <text x="120" y="72" text-anchor="middle" class="label">Browser / Mobile</text>
+
+  <rect x="260" y="30" width="200" height="70" class="box" />
+  <text x="360" y="55" text-anchor="middle" class="title">CloudFront / CDN</text>
+
+  <path d="M200 65 L260 65" class="arrow" />
+
+  <!-- Edge/API -->
+  <rect x="500" y="30" width="220" height="70" class="box" />
+  <text x="610" y="55" text-anchor="middle" class="title">API Gateway</text>
+
+  <path d="M460 65 L500 65" class="arrow" />
+
+  <!-- Compute -->
+  <rect x="120" y="150" width="220" height="110" class="box" />
+  <text x="230" y="175" text-anchor="middle" class="title">Lambda (Compute)</text>
+  <text x="230" y="195" text-anchor="middle" class="label">Business logic, WebSocket, Workers</text>
+
+  <rect x="400" y="150" width="220" height="110" class="box" />
+  <text x="510" y="175" text-anchor="middle" class="title">Step Functions</text>
+  <text x="510" y="195" text-anchor="middle" class="label">Orchestration</text>
+
+  <path d="M360 205 L400 205" class="arrow" />
+  <path d="M260 110 L260 150" class="arrow" />
+  <path d="M260 150 L120 150" class="arrow" />
+
+  <!-- Data stores -->
+  <rect x="120" y="300" width="200" height="90" class="box" />
+  <text x="220" y="330" text-anchor="middle" class="title">DynamoDB</text>
+  <text x="220" y="347" text-anchor="middle" class="label">Metadata / Fast lookups</text>
+
+  <rect x="360" y="300" width="200" height="90" class="box" />
+  <text x="460" y="330" text-anchor="middle" class="title">S3</text>
+  <text x="460" y="347" text-anchor="middle" class="label">Media / Assets</text>
+
+  <rect x="600" y="300" width="220" height="90" class="box" />
+  <text x="710" y="330" text-anchor="middle" class="title">RDS / Neo4j</text>
+  <text x="710" y="347" text-anchor="middle" class="label">User data / Graph</text>
+
+  <path d="M230 260 L230 300" class="arrow" />
+  <path d="M500 260 L500 300" class="arrow" />
+  <path d="M660 260 L660 300" class="arrow" />
+
+  <!-- Queue -->
+  <rect x="480" y="420" width="140" height="70" class="box" />
+  <text x="550" y="445" text-anchor="middle" class="title">SQS</text>
+  <text x="550" y="462" text-anchor="middle" class="label">Async Tasks / DLQ</text>
+
+  <path d="M500 260 L500 420" class="arrow" />
+
+  <!-- Legend -->
+  <text x="40" y="520" class="label">작동 흐름: 클라이언트 → CloudFront → API Gateway → Lambda → 데이터 스토어/큐 → Step Functions</text>
+
+</svg>

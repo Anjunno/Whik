@@ -1,0 +1,203 @@
+{
+  "StartAt": "Initialize_Execution",
+  "States": {
+    "Initialize_Execution": {
+      "Type": "Pass",
+      "Parameters": {
+        "PK.$": "$.PK",
+        "SK.$": "$.SK",
+        "lang_script.$": "$.lang_script",
+        "ko_script.$": "$.ko_script",
+        "iteration_count": 0
+      },
+      "Next": "학습 데이터 생성"
+    },
+    "학습 데이터 생성": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-lambda-squirrel-sf-content-generator",
+      "Next": "베드락 응답 구조 검증 + 의미 찾기 정답 랜덤화",
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Lambda.ServiceException",
+            "Lambda.AWSLambdaException",
+            "Lambda.SdkClientException",
+            "Lambda.TooManyRequestsException"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 3,
+          "BackoffRate": 2,
+          "JitterStrategy": "FULL"
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.TaskFailed",
+            "RuntimeError",
+            "ValueError"
+          ],
+          "Next": "재시도 횟수 체크",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    "베드락 응답 구조 검증 + 의미 찾기 정답 랜덤화": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-lambda-squirrel-sf-content-validator",
+      "Next": "팁, 한글 발음표기 검증",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.TaskFailed",
+            "RuntimeError",
+            "ValueError"
+          ],
+          "Next": "재시도 횟수 체크",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    "팁, 한글 발음표기 검증": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "OutputPath": "$.Payload",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-lambda-squirrel-sf-content-bedrock-validator",
+        "Payload.$": "$"
+      },
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Lambda.ServiceException",
+            "Lambda.AWSLambdaException",
+            "Lambda.SdkClientException",
+            "Lambda.TooManyRequestsException"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 3,
+          "BackoffRate": 2,
+          "JitterStrategy": "FULL"
+        }
+      ],
+      "Next": "음성 생성 병렬화",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.TaskFailed",
+            "RuntimeError",
+            "ValueError"
+          ],
+          "Next": "재시도 횟수 체크",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    "재시도 횟수 체크": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.iteration_count",
+          "NumericLessThan": 3,
+          "Next": "재시도 횟수 증가"
+        }
+      ],
+      "Default": "Update_Failed"
+    },
+    "재시도 횟수 증가": {
+      "Type": "Pass",
+      "Parameters": {
+        "PK.$": "$.PK",
+        "SK.$": "$.SK",
+        "lang_script.$": "$.lang_script",
+        "ko_script.$": "$.ko_script",
+        "iteration_count.$": "States.MathAdd($.iteration_count, 1)"
+      },
+      "Next": "학습 데이터 생성"
+    },
+    "음성 생성 병렬화": {
+      "Type": "Parallel",
+      "Next": "최종 데이터 통합",
+      "Branches": [
+        {
+          "StartAt": "대본 음성 생성",
+          "States": {
+            "대본 음성 생성": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-lambda-squirrel-sf-ScriptAudio-generator",
+              "Retry": [
+                {
+                  "ErrorEquals": [
+                    "Lambda.ServiceException",
+                    "Lambda.AWSLambdaException",
+                    "Lambda.SdkClientException",
+                    "Lambda.TooManyRequestsException"
+                  ],
+                  "IntervalSeconds": 1,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2,
+                  "JitterStrategy": "FULL"
+                }
+              ],
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "추천 답변 음성 생성",
+          "States": {
+            "추천 답변 음성 생성": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-lambda-squirrel-sf-RecommendedAudio-generator",
+              "Retry": [
+                {
+                  "ErrorEquals": [
+                    "Lambda.ServiceException",
+                    "Lambda.AWSLambdaException",
+                    "Lambda.SdkClientException",
+                    "Lambda.TooManyRequestsException"
+                  ],
+                  "IntervalSeconds": 1,
+                  "MaxAttempts": 3,
+                  "BackoffRate": 2,
+                  "JitterStrategy": "FULL"
+                }
+              ],
+              "End": true
+            }
+          }
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "Update_Failed",
+          "ResultPath": "$.error"
+        }
+      ],
+      "ResultPath": "$.ParallelOutputs"
+    },
+    "최종 데이터 통합": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-lambda-squirrel-sf-compose-final-data",
+      "End": true,
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.TaskFailed",
+            "RuntimeError"
+          ],
+          "Next": "Update_Failed",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    "Update_Failed": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-lambda-squirrel-sf-handle-error",
+      "End": true
+    }
+  }
+}

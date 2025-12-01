@@ -1,0 +1,122 @@
+[
+  {
+    "table_name": "linkbig-ht-01-NotificationTemplate",
+    "arn": "arn:aws:dynamodb:us-east-1:<AWS_ACCOUNT_ID>:table/linkbig-ht-01-NotificationTemplate",
+    "capacity_mode": "ON_DEMAND",
+    "primary_key": {
+      "partition_key_name": "category_time_key",
+      "partition_key_type": "S",
+      "sort_key_name": "message_id",
+      "sort_key_type": "N"
+    },
+    "global_secondary_indexes": []
+  },
+  {
+    "table_name": "linkbig-ht-01-shortform-learned",
+    "arn": "arn:aws:dynamodb:us-east-1:<AWS_ACCOUNT_ID>:table/linkbig-ht-01-shortform-learned",
+    "capacity_mode": "ON_DEMAND",
+    "primary_key": {
+      "partition_key_name": "userId",
+      "partition_key_type": "S",
+      "sort_key_name": "videoId",
+      "sort_key_type": "S"
+    },
+    "global_secondary_indexes": []
+  },
+  {
+    "table_name": "linkbig-ht-01-shortform-learning-connectionsTable",
+    "arn": "arn:aws:dynamodb:us-east-1:<AWS_ACCOUNT_ID>:table/linkbig-ht-01-shortform-learning-connectionsTable",
+    "capacity_mode": "ON_DEMAND",
+    "primary_key": {
+      "partition_key_name": "connectionId",
+      "partition_key_type": "S",
+      "sort_key_name": "N/A", 
+      "sort_key_type": "N/A"
+    },
+    "global_secondary_indexes": []
+  },
+  {
+    "table_name": "linkbig-ht-01-shortform-learning-history",
+    "arn": "arn:aws:dynamodb:us-east-1:<AWS_ACCOUNT_ID>:table/linkbig-ht-01-shortform-learning-history",
+    "capacity_mode": "ON_DEMAND",
+    "primary_key": {
+      "partition_key_name": "PK",
+      "partition_key_type": "S",
+      "sort_key_name": "SK",
+      "sort_key_type": "S"
+    },
+    "global_secondary_indexes": []
+  },
+  {
+    "table_name": "linkbig-ht-01-shortform-learning-results",
+    "arn": "arn:aws:dynamodb:us-east-1:<AWS_ACCOUNT_ID>:table/linkbig-ht-01-shortform-learning-results",
+    "capacity_mode": "ON_DEMAND",
+    "primary_key": {
+      "partition_key_name": "PK",
+      "partition_key_type": "S",
+      "sort_key_name": "N/A", 
+      "sort_key_type": "N/A"
+    },
+    "global_secondary_indexes": []
+  },
+  {
+    "table_name": "linkbig-ht-01-shortform-theme-list",
+    "arn": "arn:aws:dynamodb:us-east-1:<AWS_ACCOUNT_ID>:table/linkbig-ht-01-shortform-theme-list",
+    "capacity_mode": "ON_DEMAND",
+    "primary_key": {
+      "partition_key_name": "themeId",
+      "partition_key_type": "S",
+      "sort_key_name": "N/A", 
+      "sort_key_type": "N/A"
+    },
+    "global_secondary_indexes": []
+  },
+  {
+    "table_name": "linkbig-ht-01-shortform-videos",
+    "arn": "arn:aws:dynamodb:us-east-1:<AWS_ACCOUNT_ID>:table/linkbig-ht-01-shortform-videos",
+    "capacity_mode": "ON_DEMAND",
+    "primary_key": {
+      "partition_key_name": "lang",
+      "partition_key_type": "S",
+      "sort_key_name": "SK",
+      "sort_key_type": "S"
+    },
+    "global_secondary_indexes": []
+  },
+  {
+    "table_name": "linkbig-ht-01-temp-processing",
+    "arn": "arn:aws:dynamodb:us-east-1:<AWS_ACCOUNT_ID>:table/linkbig-ht-01-temp-processing",
+    "capacity_mode": "PROVISIONED", 
+    "primary_key": {
+      "partition_key_name": "scenarioId",
+      "partition_key_type": "S",
+      "sort_key_name": "N/A",
+      "sort_key_type": "N/A"
+    },
+    "global_secondary_indexes": []
+  },
+  {
+    "table_name": "linkbig-ht-01-user-learning-history",
+    "arn": "arn:aws:dynamodb:us-east-1:<AWS_ACCOUNT_ID>:table/linkbig-ht-01-user-learning-history",
+    "capacity_mode": "ON_DEMAND",
+    "primary_key": {
+      "partition_key_name": "userId",
+      "partition_key_type": "S",
+      "sort_key_name": "createdAtTs",
+      "sort_key_type": "N" 
+    },
+    "global_secondary_indexes": []
+  },
+  {
+    "table_name": "linkbig-ht-01-user-words-master",
+    "arn": "arn:aws:dynamodb:us-east-1:<AWS_ACCOUNT_ID>:table/linkbig-ht-01-user-words-master",
+    "capacity_mode": "ON_DEMAND",
+    "primary_key": {
+      "partition_key_name": "userId",
+      "partition_key_type": "S",
+      "sort_key_name": "word_lang_gender",
+      "sort_key_type": "S"
+    },
+    "global_secondary_indexes": []
+  }
+]

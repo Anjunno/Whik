@@ -1,0 +1,166 @@
+{
+  "Comment": "A description of my state machine",
+  "StartAt": "등장인물, 대사 생성",
+  "States": {
+    "등장인물, 대사 생성": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Output": "{% $states.result.Payload %}",
+      "Arguments": {
+        "FunctionName": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-AIFactory-GenScript:$LATEST",
+        "Payload": "{% $states.input %}"
+      },
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Lambda.ServiceException",
+            "Lambda.AWSLambdaException",
+            "Lambda.SdkClientException",
+            "Lambda.TooManyRequestsException"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 3,
+          "BackoffRate": 2,
+          "JitterStrategy": "FULL"
+        }
+      ],
+      "Next": "영상별 분산 처리"
+    },
+    "영상별 분산 처리": {
+      "Type": "Map",
+      "ItemProcessor": {
+        "ProcessorConfig": {
+          "Mode": "INLINE"
+        },
+        "StartAt": "이미지 크롤링 및 이미지 검수",
+        "States": {
+          "이미지 크롤링 및 이미지 검수": {
+            "Type": "Task",
+            "Resource": "arn:aws:states:::lambda:invoke",
+            "Output": "{% $states.result.Payload %}",
+            "Arguments": {
+              "FunctionName": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-AIFactory-ImageCrawling:$LATEST",
+              "Payload": "{% $states.input %}"
+            },
+            "Retry": [
+              {
+                "ErrorEquals": [
+                  "Lambda.ServiceException",
+                  "Lambda.AWSLambdaException",
+                  "Lambda.SdkClientException",
+                  "Lambda.TooManyRequestsException"
+                ],
+                "IntervalSeconds": 1,
+                "MaxAttempts": 3,
+                "BackoffRate": 2,
+                "JitterStrategy": "FULL"
+              }
+            ],
+            "Next": "영상 생성"
+          },
+          "영상 생성": {
+            "Type": "Task",
+            "Resource": "arn:aws:states:::lambda:invoke",
+            "Output": "{% $states.result.Payload %}",
+            "Arguments": {
+              "FunctionName": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-AIFactory-GenVideo:$LATEST",
+              "Payload": "{% $states.input %}"
+            },
+            "Retry": [
+              {
+                "ErrorEquals": [
+                  "Lambda.ServiceException",
+                  "Lambda.AWSLambdaException",
+                  "Lambda.SdkClientException",
+                  "Lambda.TooManyRequestsException"
+                ],
+                "IntervalSeconds": 1,
+                "MaxAttempts": 3,
+                "BackoffRate": 2,
+                "JitterStrategy": "FULL"
+              }
+            ],
+            "Next": "Wait"
+          },
+          "Wait": {
+            "Type": "Wait",
+            "Seconds": 120,
+            "Next": "가이드라인 기반 영상 검수"
+          },
+          "가이드라인 기반 영상 검수": {
+            "Type": "Task",
+            "Resource": "arn:aws:states:::lambda:invoke",
+            "Output": "{% $states.result.Payload %}",
+            "Arguments": {
+              "FunctionName": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-AIFactory-Save:$LATEST",
+              "Payload": {
+                "mode": "POLL_CHECK",
+                "veoOpName.$": "$.veoOperationName",
+                "jobId.$": "$.jobId",
+                "userId.$": "$.userId"
+              }
+            },
+            "Retry": [
+              {
+                "ErrorEquals": [
+                  "Lambda.ServiceException",
+                  "Lambda.AWSLambdaException",
+                  "Lambda.SdkClientException",
+                  "Lambda.TooManyRequestsException"
+                ],
+                "IntervalSeconds": 1,
+                "MaxAttempts": 3,
+                "BackoffRate": 2,
+                "JitterStrategy": "FULL"
+              }
+            ],
+            "Next": "Still_Running"
+          },
+          "Still_Running": {
+            "Type": "Choice",
+            "Choices": [
+              {
+                "Next": "Wait",
+                "Condition": "{% ($states.input.isCompleted) = (false) %}"
+              }
+            ],
+            "Default": "학습 데이터 최종 저장"
+          },
+          "학습 데이터 최종 저장": {
+            "Type": "Task",
+            "Resource": "arn:aws:states:::lambda:invoke",
+            "Output": "{% $states.result.Payload %}",
+            "Arguments": {
+              "FunctionName": "arn:aws:lambda:us-east-1:<AWS_ACCOUNT_ID>:function:linkbig-ht-01-AIFactory-Save:$LATEST",
+              "Payload": {
+                "mode": "QC_SAVE",
+                "jobId.$": "$.jobId",
+                "userId.$": "$.userId",
+                "gcsUrl.$": "$.gcsUrl",
+                "finalPrompt.$": "$.finalPrompt",
+                "qcStatus": "PASS"
+              }
+            },
+            "Retry": [
+              {
+                "ErrorEquals": [
+                  "Lambda.ServiceException",
+                  "Lambda.AWSLambdaException",
+                  "Lambda.SdkClientException",
+                  "Lambda.TooManyRequestsException"
+                ],
+                "IntervalSeconds": 1,
+                "MaxAttempts": 3,
+                "BackoffRate": 2,
+                "JitterStrategy": "FULL"
+              }
+            ],
+            "End": true
+          }
+        }
+      },
+      "End": true
+    }
+  },
+  "QueryLanguage": "JSONata"
+}

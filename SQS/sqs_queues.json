@@ -1,0 +1,138 @@
+[
+{
+  "QueueArn": "arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-AIFactory-GenScript-SQS",
+  "ApproximateNumberOfMessages": "0",
+  "ApproximateNumberOfMessagesNotVisible": "0",
+  "ApproximateNumberOfMessagesDelayed": "0",
+  "CreatedTimestamp": "1763275405",
+  "LastModifiedTimestamp": "1763275405",
+  "VisibilityTimeout": "30",
+  "MaximumMessageSize": "1048576",
+  "MessageRetentionPeriod": "345600",
+  "DelaySeconds": "0",
+  "Policy": "{\"Version\":\"2012-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::<AWS_ACCOUNT_ID>:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-AIFactory-GenScript-SQS\"}]}",
+  "ReceiveMessageWaitTimeSeconds": "0",
+  "SqsManagedSseEnabled": "true",
+  "QueueUrl": "https://sqs.us-east-1.amazonaws.com/<AWS_ACCOUNT_ID>/linkbig-ht-01-AIFactory-GenScript-SQS"
+}
+,
+{
+  "QueueArn": "arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-AIFactory-GenVideo-SQS",
+  "ApproximateNumberOfMessages": "0",
+  "ApproximateNumberOfMessagesNotVisible": "0",
+  "ApproximateNumberOfMessagesDelayed": "0",
+  "CreatedTimestamp": "1763275437",
+  "LastModifiedTimestamp": "1763275437",
+  "VisibilityTimeout": "30",
+  "MaximumMessageSize": "1048576",
+  "MessageRetentionPeriod": "345600",
+  "DelaySeconds": "0",
+  "Policy": "{\"Version\":\"2012-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::<AWS_ACCOUNT_ID>:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-AIFactory-GenVideo-SQS\"}]}",
+  "ReceiveMessageWaitTimeSeconds": "0",
+  "SqsManagedSseEnabled": "true",
+  "QueueUrl": "https://sqs.us-east-1.amazonaws.com/<AWS_ACCOUNT_ID>/linkbig-ht-01-AIFactory-GenVideo-SQS"
+}
+,
+{
+  "QueueArn": "arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-AIFactory-ImageCrawling-SQS",
+  "ApproximateNumberOfMessages": "0",
+  "ApproximateNumberOfMessagesNotVisible": "0",
+  "ApproximateNumberOfMessagesDelayed": "0",
+  "CreatedTimestamp": "1763275426",
+  "LastModifiedTimestamp": "1763472526",
+  "VisibilityTimeout": "30",
+  "MaximumMessageSize": "1048576",
+  "MessageRetentionPeriod": "345600",
+  "DelaySeconds": "0",
+  "Policy": "{\"Version\":\"2012-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::<AWS_ACCOUNT_ID>:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-AIFactory-ImageCrawling-SQS\"}]}",
+  "ReceiveMessageWaitTimeSeconds": "0",
+  "SqsManagedSseEnabled": "true",
+  "QueueUrl": "https://sqs.us-east-1.amazonaws.com/<AWS_ACCOUNT_ID>/linkbig-ht-01-AIFactory-ImageCrawling-SQS"
+}
+,
+{
+  "QueueArn": "arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-lambda-squirrel-neo4j-ingestion-DLQ",
+  "ApproximateNumberOfMessages": "0",
+  "ApproximateNumberOfMessagesNotVisible": "0",
+  "ApproximateNumberOfMessagesDelayed": "0",
+  "CreatedTimestamp": "1759652807",
+  "LastModifiedTimestamp": "1759652807",
+  "VisibilityTimeout": "30",
+  "MaximumMessageSize": "1048576",
+  "MessageRetentionPeriod": "345600",
+  "DelaySeconds": "0",
+  "Policy": "{\"Version\":\"2012-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::<AWS_ACCOUNT_ID>:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-lambda-squirrel-neo4j-ingestion-DLQ\"}]}",
+  "ReceiveMessageWaitTimeSeconds": "0",
+  "SqsManagedSseEnabled": "true",
+  "QueueUrl": "https://sqs.us-east-1.amazonaws.com/<AWS_ACCOUNT_ID>/linkbig-ht-01-lambda-squirrel-neo4j-ingestion-DLQ"
+}
+,
+{
+  "QueueArn": "arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-lambda-squirrel-neo4j-ingestion-queue",
+  "ApproximateNumberOfMessages": "0",
+  "ApproximateNumberOfMessagesNotVisible": "0",
+  "ApproximateNumberOfMessagesDelayed": "0",
+  "CreatedTimestamp": "1759652756",
+  "LastModifiedTimestamp": "1759652843",
+  "VisibilityTimeout": "60",
+  "MaximumMessageSize": "1048576",
+  "MessageRetentionPeriod": "345600",
+  "DelaySeconds": "0",
+  "Policy": "{\"Version\":\"2012-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::<AWS_ACCOUNT_ID>:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-lambda-squirrel-neo4j-ingestion-queue\"}]}",
+  "RedrivePolicy": "{\"deadLetterTargetArn\":\"arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-lambda-squirrel-neo4j-ingestion-DLQ\",\"maxReceiveCount\":4}",
+  "ReceiveMessageWaitTimeSeconds": "20",
+  "SqsManagedSseEnabled": "true",
+  "QueueUrl": "https://sqs.us-east-1.amazonaws.com/<AWS_ACCOUNT_ID>/linkbig-ht-01-lambda-squirrel-neo4j-ingestion-queue"
+}
+,
+{
+  "QueueArn": "arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-lambda-squirrel-shortform-foreign-process-queue",
+  "ApproximateNumberOfMessages": "0",
+  "ApproximateNumberOfMessagesNotVisible": "0",
+  "ApproximateNumberOfMessagesDelayed": "0",
+  "CreatedTimestamp": "1759758774",
+  "LastModifiedTimestamp": "1759758774",
+  "VisibilityTimeout": "30",
+  "MaximumMessageSize": "1048576",
+  "MessageRetentionPeriod": "345600",
+  "DelaySeconds": "0",
+  "Policy": "{\"Version\":\"2012-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::<AWS_ACCOUNT_ID>:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-lambda-squirrel-shortform-foreign-process-queue\"}]}",
+  "ReceiveMessageWaitTimeSeconds": "0",
+  "SqsManagedSseEnabled": "true",
+  "QueueUrl": "https://sqs.us-east-1.amazonaws.com/<AWS_ACCOUNT_ID>/linkbig-ht-01-lambda-squirrel-shortform-foreign-process-queue"
+}
+,
+{
+  "QueueArn": "arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-lambda-squirrel-shortform-korean-process-queue",
+  "ApproximateNumberOfMessages": "0",
+  "ApproximateNumberOfMessagesNotVisible": "0",
+  "ApproximateNumberOfMessagesDelayed": "0",
+  "CreatedTimestamp": "1759758756",
+  "LastModifiedTimestamp": "1759758756",
+  "VisibilityTimeout": "30",
+  "MaximumMessageSize": "1048576",
+  "MessageRetentionPeriod": "345600",
+  "DelaySeconds": "0",
+  "Policy": "{\"Version\":\"2012-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::<AWS_ACCOUNT_ID>:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-lambda-squirrel-shortform-korean-process-queue\"}]}",
+  "ReceiveMessageWaitTimeSeconds": "0",
+  "SqsManagedSseEnabled": "true",
+  "QueueUrl": "https://sqs.us-east-1.amazonaws.com/<AWS_ACCOUNT_ID>/linkbig-ht-01-lambda-squirrel-shortform-korean-process-queue"
+}
+,
+{
+  "QueueArn": "arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-lambda-squirrel-shortform-learning-task-queue",
+  "ApproximateNumberOfMessages": "0",
+  "ApproximateNumberOfMessagesNotVisible": "0",
+  "ApproximateNumberOfMessagesDelayed": "0",
+  "CreatedTimestamp": "1760250879",
+  "LastModifiedTimestamp": "1760252663",
+  "VisibilityTimeout": "30",
+  "MaximumMessageSize": "1048576",
+  "MessageRetentionPeriod": "345600",
+  "DelaySeconds": "0",
+  "Policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"s3.amazonaws.com\"},\"Action\":\"sqs:SendMessage\",\"Resource\":\"arn:aws:sqs:us-east-1:<AWS_ACCOUNT_ID>:linkbig-ht-01-lambda-squirrel-shortform-learning-task-queue\",\"Condition\":{\"ArnLike\":{\"aws:SourceArn\":\"arn:aws:s3:::<S3_BUCKET_NAME>\"}}}]}",
+  "ReceiveMessageWaitTimeSeconds": "0",
+  "SqsManagedSseEnabled": "true",
+  "QueueUrl": "https://sqs.us-east-1.amazonaws.com/<AWS_ACCOUNT_ID>/linkbig-ht-01-lambda-squirrel-shortform-learning-task-queue"
+}
+]
