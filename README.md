@@ -67,13 +67,14 @@
 ## 기술 스택
 
 | 카테고리 | 기술 |
-| --- | --- |
-| **Frontend & App** | Flutter, Dart |
-| **Backend & Cloud** | AWS, Python, Lambda, API Gateway |
-| **Data & Storage** | DynamoDB, RDS(MySQL), S3 |
-| **Messaging & Orchestration** | SQS, Step Functions |
-| **AI / ML & Media** | Bedrock, Polly, Transcribe, Google TTS |
-| **Deployment & CDN** | CloudFront, EC2 |
+| :--- | :--- |
+| **Frontend & App** | ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white) ![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat&logo=dart&logoColor=white) |
+| **Backend & Cloud** | ![AWS](https://img.shields.io/badge/AWS-FF9900?style=flat&logo=amazon&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![Lambda](https://img.shields.io/badge/AWS%20Lambda-FF9900?style=flat&logo=aws-lambda&logoColor=white) ![API Gateway](https://img.shields.io/badge/Amazon%20API%20Gateway-FF4F8B?style=flat&logo=amazon&logoColor=white) |
+| **Data & Storage** | ![DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-4053D6?style=flat&logo=amazondynamodb&logoColor=white) ![RDS](https://img.shields.io/badge/Amazon%20RDS-527FFF?style=flat&logo=amazon-rds&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white) ![S3](https://img.shields.io/badge/Amazon%20S3-569A31?style=flat&logo=amazon-s3&logoColor=white) |
+| **Messaging & Orchestration** | ![SQS](https://img.shields.io/badge/Amazon%20SQS-FF4F8B?style=flat&logo=amazon-sqs&logoColor=white) ![Step Functions](https://img.shields.io/badge/AWS%20Step%20Functions-FF9900?style=flat&logo=amazon&logoColor=white) |
+| **AI/ML & Processing** | ![Bedrock](https://img.shields.io/badge/Amazon%20Bedrock-FF9900?style=flat&logo=amazon&logoColor=white) ![Polly](https://img.shields.io/badge/Amazon%20Polly-FF9900?style=flat&logo=amazon&logoColor=white) ![Transcribe](https://img.shields.io/badge/Amazon%20Transcribe-FF9900?style=flat&logo=amazon&logoColor=white) ![Google TTS](https://img.shields.io/badge/Google%20TTS-4285F4?style=flat&logo=google&logoColor=white) |
+| **Deployment & CDN** | ![CloudFront](https://img.shields.io/badge/Amazon%20CloudFront-FF9900?style=flat&logo=amazon&logoColor=white) ![EC2](https://img.shields.io/badge/Amazon%20EC2-FF9900?style=flat&logo=amazon-ec2&logoColor=white) |
+
 
 <br>
 
