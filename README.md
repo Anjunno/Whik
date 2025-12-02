@@ -74,8 +74,7 @@
 | **Messaging & Orchestration** | ![SQS](https://img.shields.io/badge/Amazon%20SQS-FF4F8B?style=flat&logo=amazon-sqs&logoColor=white) ![Step Functions](https://img.shields.io/badge/AWS%20Step%20Functions-FF9900?style=flat&logo=amazon&logoColor=white) ![EventBridge](https://img.shields.io/badge/Amazon%20EventBridge-FF4F8B?style=flat&logo=amazon&logoColor=white) ![FCM](https://img.shields.io/badge/Firebase%20Cloud%20Messaging-FFCA28?style=flat&logo=firebase&logoColor=white) |
 | **AI/ML & Processing** | ![Bedrock](https://img.shields.io/badge/Amazon%20Bedrock-FF9900?style=flat&logo=amazon&logoColor=white) ![Polly](https://img.shields.io/badge/Amazon%20Polly-FF9900?style=flat&logo=amazon&logoColor=white) ![Transcribe](https://img.shields.io/badge/Amazon%20Transcribe-FF9900?style=flat&logo=amazon&logoColor=white) ![Google STT](https://img.shields.io/badge/Google%20STT-4285F4?style=flat&logo=google&logoColor=white) ![Veo3](https://img.shields.io/badge/Google%20Veo%203-4285F4?style=flat&logo=google&logoColor=white) |
 | **CDN** | ![CloudFront](https://img.shields.io/badge/Amazon%20CloudFront-FF9900?style=flat&logo=amazon&logoColor=white) |
-
-
+| **Monitoring & Logging** | ![CloudWatch](https://img.shields.io/badge/Amazon%20CloudWatch-FF4F8B?style=flat&logo=amazon-cloudwatch&logoColor=white) |
 
 <br>
 
