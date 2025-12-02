@@ -9,8 +9,8 @@
 <br>
 
 ## 간단 소개
-**Whik(휙!)** 은 숏폼 기반 외국어 학습 모바일 앱으로, 외국어 학습에 숏폼 콘텐츠의 몰입성을 결합하여  
-높은 이탈률이라는 기존 언어 학습 서비스의 한계를 개선하고자 개발했습니다.
+**Whik(휙!)** 은 숏폼 기반 외국어 학습 모바일 앱입니다.  
+짧고 몰입감 있는 영상 콘텐츠를 활용하여 기존 언어 학습 앱의 높은 **이탈률 문제를 개선**하고, **듣기·말하기·문법 능력**을 동시에 향상시키는 새로운 학습 경험을 제공합니다.
 
 <br>
 
@@ -78,16 +78,20 @@
 <br>
 
 ## 폴더 구조
-- `API_Gateway/` — API Gateway 설정 및 통합
-- `CloudFront/` — CloudFront 배포 구성
-- `DynamoDB/` — DynamoDB 테이블 스키마
-- `EC2/` — EC2 인스턴스 구성
-- `EventBridge/` — EventBridge 스케줄러 설정
-- `Lambda/` — Lambda 함수 코드
-- `RDS/` — 데이터베이스 스키마
-- `S3/` — 버킷 정책 및 CORS 설정
-- `SQS/` — 큐 설정
-- `Step_Functions/` — Step Functions 워크플로우 정의
+
+```bash
+📂 Whik
+ ├── API_Gateway/        # API Gateway 설정 및 통합
+ ├── CloudFront/         # CloudFront 배포 구성
+ ├── DynamoDB/           # DynamoDB 테이블 스키마
+ ├── EC2/                # 웹 서버 구성
+ ├── EventBridge/        # 이벤트 스케줄러
+ ├── Lambda/             # Lambda 함수 코드
+ ├── RDS/                # MySQL 스키마
+ ├── S3/                 # 버킷/권한/CORS
+ ├── SQS/                # 큐 설정
+ └── Step_Functions/     # 워크플로우 정의
+ ```
 
 <br>
 
@@ -114,14 +118,14 @@
 
 ## 단어학습 그래프
 <p align="center">
-  <img src="assets/graph.png" width="520" />
+  <img src="assets/graph.png" width="420" />
 </p>
 
 <br>
 
 ## 사진 기반 단어 학습 데모
 <p align="center">
-  <img src="assets/rrr.gif" width="400" />
+  <img src="assets/rrr.gif" width="200" />
 </p>
 
 <br>
