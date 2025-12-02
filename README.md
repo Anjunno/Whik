@@ -107,7 +107,7 @@
 
 ## 단어학습 아키텍처 구성도
 <p align="center">
-  <img src="assets/word.png" width="520" />
+  <img src="assets/word.png" width="720" />
 </p>
 
 <br>
@@ -121,7 +121,7 @@
 
 ## 사진 기반 단어 학습 데모
 <p align="center">
-  <img src="assets/rrr.gif" width="520" />
+  <img src="assets/rrr.gif" width="400" />
 </p>
 
 <br>
