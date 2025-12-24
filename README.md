@@ -6,9 +6,7 @@
 
 <p align="center">
   <strong>휙! 넘기다 보면 말이 트인다!</strong><br/><br/>
-  <a href="https://coshow.shop">
-    [데모 바로가기]
-  </a>
+  <!-- <a href="https://coshow.shop">[데모 바로가기]</a> -->
 </p>
 
 
